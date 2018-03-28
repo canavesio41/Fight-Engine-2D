@@ -28,7 +28,7 @@
             <string>//init
 enum_init();
 global.lifebar_height = 0.5;
-// timer
+// timer (Esto es para aclararle al editor que son globales, nada mas)
 global.roomSpeed = 30;
 global.seconds = 2;
 </string>
@@ -71,11 +71,21 @@ if(oEnemy.cur_hp &lt;= 0)
 {
    game_restart();
 }
-
-if (global.seconds &lt;= 0)
+// timer controller
+if (global.seconds &lt;= 0) // si el tiempo termina
 {
-    show_debug_message("It enters here m8");
-    game_end(); // this is done to finish the game when the timer ends
+if (oPlayer.cur_hp &lt; oEnemy.cur_hp) // y el enemigo tiene mas vida que el jugador
+{
+    game_end(); // el juego termina
+}
+else if (oPlayer.cur_hp &gt; oEnemy.cur_hp) // y el jugador tiene mas vida que el enemigo
+{
+    game_restart(); // el juego se reinicia
+}
+else // si es empate
+{
+    game_end(); // el juego termina
+}
 }
 </string>
           </argument>

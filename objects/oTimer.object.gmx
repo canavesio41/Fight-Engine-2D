@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>// starting the timer
 global.roomSpeed = 30;
-global.seconds = 2;
+global.seconds = 12;
 alarm[0] = global.roomSpeed;
 </string>
           </argument>
