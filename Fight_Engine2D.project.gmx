@@ -73,6 +73,7 @@
     <object>objects\oHurtbox</object>
     <object>objects\oHitbox</object>
     <object>objects\obj_bg_bar</object>
+    <object>objects\oTimer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>

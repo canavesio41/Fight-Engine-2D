@@ -2,9 +2,9 @@
 <object>
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
-  <visible>0</visible>
+  <visible>-1</visible>
   <depth>0</depth>
-  <persistent>-1</persistent>
+  <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -25,18 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//init
-enum_init();
-global.lifebar_height = 0.5;
-// timer
+            <string>// starting the timer
 global.roomSpeed = 30;
 global.seconds = 2;
+alarm[0] = global.roomSpeed;
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="0">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -53,30 +51,9 @@ global.seconds = 2;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(keyboard_check(vk_lshift)){
-    room_speed = 5;
-}else{
-    room_speed = 60;
-}
-
-if(keyboard_check_pressed(vk_escape)){
-    game_end();
-}
-
-if(keyboard_check_pressed(ord("R"))){
-    game_restart();
-}
-
-if(oEnemy.cur_hp &lt;= 0)
-{
-   game_restart();
-}
-
-if (global.seconds &lt;= 0)
-{
-    show_debug_message("It enters here m8");
-    game_end(); // this is done to finish the game when the timer ends
-}
+            <string>// The alarm goes off
+global.seconds -= 1;
+alarm[0] = global.roomSpeed;
 </string>
           </argument>
         </arguments>
