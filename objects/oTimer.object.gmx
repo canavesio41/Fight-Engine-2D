@@ -26,8 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>// starting the timer
-global.roomSpeed = 30;
-global.seconds = 12;
+global.roomSpeed = 60;
+global.seconds = 3;
 alarm[0] = global.roomSpeed;
 </string>
           </argument>
@@ -35,6 +35,26 @@ alarm[0] = global.roomSpeed;
       </action>
     </event>
     <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>605</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>inicio del round</string>
+          </argument>
+        </arguments>
+      </action>
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -51,8 +71,21 @@ alarm[0] = global.roomSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// The alarm goes off
-global.seconds -= 1;
+            <string>// round start
+if (global.roundStart == false)
+{
+    global.seconds -= 1;
+    if (global.seconds == 0)
+    {
+        global.roundStart = true;
+        global.seconds = 60;
+    }
+}
+// normal timer
+if (global.roundStart == true)
+{
+    global.seconds -= 1;
+}
 alarm[0] = global.roomSpeed;
 </string>
           </argument>
@@ -76,7 +109,18 @@ alarm[0] = global.roomSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(314, 5, real(global.seconds));
+            <string>if (global.roundStart == false &amp;&amp; global.seconds &gt; 1)
+{
+    draw_text(144, 80, "round " + string(global.roundNumber) + "!#");
+}
+else if (global.roundStart == false &amp;&amp; global.seconds == 1)
+{
+    draw_text(144, 80, "Fight!");
+}
+if (global.roundStart == true)
+{
+    draw_text(314, 5, real(global.seconds));
+}
 </string>
           </argument>
         </arguments>

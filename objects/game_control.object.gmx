@@ -28,9 +28,15 @@
             <string>//init
 enum_init();
 global.lifebar_height = 0.5;
-// timer (Esto es para aclararle al editor que son globales, nada mas)
+// timer
 global.roomSpeed = 30;
 global.seconds = 2;
+// Round system
+global.roundStart = false;
+global.roundNumber = 1;
+global.playerPoints = 0;
+global.enemyPoints = 0;
+global.maxVictoryPoints = 2;
 </string>
           </argument>
         </arguments>
