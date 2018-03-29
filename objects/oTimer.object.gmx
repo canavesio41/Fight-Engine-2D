@@ -111,6 +111,25 @@ if (global.roundStart == true)
 {
     draw_text(314, 5, real(global.seconds));
 }
+// draw shit
+// death controller draw
+if(oEnemy.cur_hp &lt;= 0 &amp;&amp; global.roundEnd == true)
+{
+   draw_text(144, 80, "playerWins");
+}
+// timer controller draw
+if ((oPlayer.cur_hp &lt; oEnemy.cur_hp) &amp;&amp; global.roundEnd == true)
+{
+    draw_text(144, 80, "enemyWins");
+}
+else if ((oPlayer.cur_hp &gt; oEnemy.cur_hp) &amp;&amp; global.roundEnd == true)
+{
+    draw_text(144, 80, "playerWins");
+}
+else if ((oPlayer.cur_hp == oEnemy.cur_hp) &amp;&amp; global.roundEnd == true)
+{
+    draw_text(144, 80, "draw");
+}
 </string>
           </argument>
         </arguments>

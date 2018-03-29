@@ -1,13 +1,29 @@
-oPlayer.cur_hp = oPlayer.max_hp;
-oEnemy.cur_hp = oEnemy.max_hp;
-//position_change(140, 48, oPlayer, false);
-oPlayer.x = 140;
-oPlayer.y = 48;
-//position_change(192, 48, oEnemy, true);
-oEnemy.x = 192;
-oEnemy.y = 48;
-global.roundNumber += 1;
-global.roundEnd = false;
-global.roundStart = false;
-global.seconds = 5;
-show_debug_message("RestartLifeAndDeath");
+if (global.playerPoints == global.maxVictoryPoints || 
+global.enemyPoints == global.maxVictoryPoints)
+{
+    if (global.playerPoints > global.enemyPoints)
+    {
+        game_restart();
+    }
+    else if (global.playerPoints < global.enemyPoints)
+    {
+        game_end();
+    }
+    else
+    {
+        game_end();
+    }
+}
+else
+{
+    oPlayer.cur_hp = oPlayer.max_hp;
+    oEnemy.cur_hp = oEnemy.max_hp;
+    oPlayer.x = 140;
+    oPlayer.y = 48;
+    oEnemy.x = 192;
+    oEnemy.y = 48;
+    global.roundNumber += 1;
+    global.roundEnd = false;
+    global.roundStart = false;
+    global.seconds = 5;
+}
