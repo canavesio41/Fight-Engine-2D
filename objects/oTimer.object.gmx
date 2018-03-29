@@ -37,26 +37,6 @@ alarm[0] = global.roomSpeed;
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>605</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>0</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>inicio del round</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
         <id>603</id>
         <kind>7</kind>
         <userelative>0</userelative>
@@ -72,7 +52,7 @@ alarm[0] = global.roomSpeed;
           <argument>
             <kind>1</kind>
             <string>// round start
-if (global.roundStart == false)
+if (global.roundStart == false &amp;&amp; global.roundEnd == false)
 {
     global.seconds -= 1;
     if (global.seconds == 0)
@@ -82,9 +62,19 @@ if (global.roundStart == false)
     }
 }
 // normal timer
-if (global.roundStart == true)
+if (global.roundStart == true &amp;&amp; global.roundEnd == false)
 {
     global.seconds -= 1;
+}
+// round end
+if (global.roundStart == false &amp;&amp; global.roundEnd == true)
+{
+    global.seconds -= 1;
+    if (global.seconds == 0)
+    {
+        global.roundEnd = false;
+        RestartLifeAndDeath();
+    }
 }
 alarm[0] = global.roomSpeed;
 </string>
@@ -109,11 +99,11 @@ alarm[0] = global.roomSpeed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.roundStart == false &amp;&amp; global.seconds &gt; 1)
+            <string>if (global.roundStart == false &amp;&amp; global.roundEnd == false &amp;&amp; global.seconds &gt; 1)
 {
     draw_text(144, 80, "round " + string(global.roundNumber) + "!#");
 }
-else if (global.roundStart == false &amp;&amp; global.seconds == 1)
+else if (global.roundStart == false &amp;&amp; global.roundEnd == false &amp;&amp; global.seconds == 1)
 {
     draw_text(144, 80, "Fight!");
 }

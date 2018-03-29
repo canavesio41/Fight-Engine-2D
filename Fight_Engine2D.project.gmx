@@ -64,6 +64,12 @@
       <script>scripts\hitbox_create.gml</script>
     </scripts>
     <script>scripts\draw_spritebar.gml</script>
+    <scripts name="RoundSystem">
+      <script>scripts\victoryConditionPlayer.gml</script>
+      <script>scripts\victoryConditionEnemy.gml</script>
+      <script>scripts\drawCondition.gml</script>
+      <script>scripts\RestartLifeAndDeath.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\game_control</object>

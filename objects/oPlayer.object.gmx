@@ -265,8 +265,10 @@ if(onGround){
           <argument>
             <kind>1</kind>
             <string>//buttons
-player_buttons();
-
+if (global.roundStart == true &amp;&amp; global.roundEnd == false)
+{
+    player_buttons();
+}
 //animation
 frame += frameSpeed;
 
