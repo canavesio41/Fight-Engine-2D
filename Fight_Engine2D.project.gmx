@@ -45,6 +45,7 @@
         <script>scripts\attack_state.gml</script>
         <script>scripts\hit_state.gml</script>
         <script>scripts\dead_state.gml</script>
+        <script>scripts\air_state.gml</script>
       </scripts>
     </scripts>
     <scripts name="math">

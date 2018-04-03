@@ -265,10 +265,10 @@ if(onGround){
           <argument>
             <kind>1</kind>
             <string>//buttons
-if (global.roundStart == true &amp;&amp; global.roundEnd == false)
+if (global.roundStart == true &amp;&amp; global.roundEnd == false &amp;&amp; currentState == states.normal)
 {
     player_buttons();
-}
+} // Quiten el current state del if si inventaron un ataque aereo. (Hollow)
 
 //animation
 frame += frameSpeed;
@@ -293,6 +293,12 @@ switch currentState {
     case states.dead:
         str_current_state = "dead";
         dead_state();
+    break;
+        
+    case states.air:
+        str_current_state = "air";
+        air_state();
+    break;
 }
 
 

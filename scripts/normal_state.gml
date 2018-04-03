@@ -15,10 +15,10 @@ move_wrap(1,1,sprite_width);
 if(onGround){
     aSpeed = groundAccel;
     dSpeed = groundDecel;
-}else if(!onGround){
+}/*else if(!onGround){
     aSpeed = airAccel;
     dSpeed = airDecel;
-}
+}*/
 
 //jump
 if(onGround){
@@ -29,11 +29,11 @@ if(onGround){
 }
 
 //variable jump height
-if(!onGround){
+/*if(!onGround){
     if(ySpeed < 0 && !up){
         ySpeed *= 0.5;
     }
-}
+}*/
 
 //change to crouch state
 if(down){
@@ -58,6 +58,10 @@ if (cur_hp <= 0){
     currentState = states.dead;
 }
 
-if(!onGround){
+/*if(!onGround){
     landed = false;
+}*/
+
+if (!onGround){
+    currentState = states.air;
 }

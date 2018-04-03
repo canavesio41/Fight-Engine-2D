@@ -121,6 +121,10 @@ if(hit){
 if (cur_hp &lt;= 0){
     currentState = states.dead;
 }
+
+if (!onGround){
+    currentState = states.air;
+}
 </string>
           </argument>
         </arguments>
@@ -238,6 +242,10 @@ switch currentState {
     
     case states.dead:
         dead_state();
+    break;
+    
+    case states.air:
+        air_state();
     break;
 }
 </string>

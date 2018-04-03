@@ -16,7 +16,7 @@ switch currentState {
             }else{
                 sprite = sprPlayer_Idle;
             }
-        }else{
+        }/*else{
             sprite = sprPlayer_Jump;
             if(ySpeed < -1){
                 frame = 0;
@@ -25,7 +25,7 @@ switch currentState {
             }else{
                 frame = 2;
             }
-        }
+        }*/
     break;
 
     case states.crouch:
@@ -38,6 +38,17 @@ switch currentState {
     
     case states.dead:
         sprite = sprPlayer_Dead;
+    break;
+    
+    case states.air:
+        sprite = sprPlayer_Jump;
+           if(ySpeed < -1){
+                frame = 0;
+           }else if(ySpeed > 1){
+                frame = 1;
+           }else{
+                frame = 2;
+           }
     break;
 }
 
