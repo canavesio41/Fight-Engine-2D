@@ -35,6 +35,10 @@ switch currentState {
     case states.attack:
         sprite = sprPlayer_Attack;
     break;
+    
+    case states.dead:
+        sprite = sprPlayer_Dead;
+    break;
 }
 
 //reset frame to 0 if sprite changes

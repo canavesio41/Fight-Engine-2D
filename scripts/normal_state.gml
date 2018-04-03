@@ -54,6 +54,10 @@ if(onGround){
     }
 }
 
+if (cur_hp <= 0){
+    currentState = states.dead;
+}
+
 if(!onGround){
     landed = false;
 }

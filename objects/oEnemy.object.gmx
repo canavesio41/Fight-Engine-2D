@@ -117,6 +117,10 @@ if(hit){
     currentState = states.hit;
     
 }
+
+if (cur_hp &lt;= 0){
+    currentState = states.dead;
+}
 </string>
           </argument>
         </arguments>
@@ -230,6 +234,10 @@ frame += frameSpeed;
 switch currentState {
     case states.hit:
         hit_state();
+    break;
+    
+    case states.dead:
+        dead_state();
     break;
 }
 </string>

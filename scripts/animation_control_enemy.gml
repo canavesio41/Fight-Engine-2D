@@ -10,6 +10,11 @@ switch currentState {
     case states.hit:
         sprite = sprEnemy_Hurt;
     break;
+    
+    case states.dead:
+        sprite = sprEnemy_Dead;
+        show_debug_message("laputaquetepario");
+    break;
 }
 
 //reset frame to 0 if sprite changes

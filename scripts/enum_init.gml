@@ -3,6 +3,7 @@ enum states {
     normal,
     crouch, 
     attack,
-    hit
+    hit,
+    dead
 }
 

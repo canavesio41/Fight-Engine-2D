@@ -12,6 +12,7 @@
       <sprite>sprites\sprPlayer_Crouch</sprite>
       <sprite>sprites\sprPlayer_Attack</sprite>
       <sprite>sprites\sprPlayer_Jump</sprite>
+      <sprite>sprites\sprPlayer_Dead</sprite>
     </sprites>
     <sprites name="collision">
       <sprite>sprites\sprBlocker</sprite>
@@ -19,6 +20,7 @@
     <sprites name="enemy">
       <sprite>sprites\sprEnemy_Idle</sprite>
       <sprite>sprites\sprEnemy_Hurt</sprite>
+      <sprite>sprites\sprEnemy_Dead</sprite>
     </sprites>
     <sprites name="boxes">
       <sprite>sprites\sprHurtbox</sprite>
@@ -42,6 +44,7 @@
         <script>scripts\crouch_state.gml</script>
         <script>scripts\attack_state.gml</script>
         <script>scripts\hit_state.gml</script>
+        <script>scripts\dead_state.gml</script>
       </scripts>
     </scripts>
     <scripts name="math">

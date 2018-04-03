@@ -269,6 +269,7 @@ if (global.roundStart == true &amp;&amp; global.roundEnd == false)
 {
     player_buttons();
 }
+
 //animation
 frame += frameSpeed;
 
@@ -288,6 +289,10 @@ switch currentState {
         str_current_state = "attack";
         attack_state();
     break;
+    
+    case states.dead:
+        str_current_state = "dead";
+        dead_state();
 }
 
 
