@@ -265,7 +265,7 @@ if(onGround){
           <argument>
             <kind>1</kind>
             <string>//buttons
-if (global.roundStart == true &amp;&amp; global.roundEnd == false &amp;&amp; currentState == states.normal)
+if (global.roundStart == true &amp;&amp; global.roundEnd == false &amp;&amp; currentState != states.dead)
 {
     player_buttons();
 } // Quiten el current state del if si inventaron un ataque aereo. (Hollow)
