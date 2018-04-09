@@ -78,7 +78,7 @@ if(keyboard_check_pressed(ord("R"))){
 if(oEnemy.cur_hp &lt;= 0 &amp;&amp; global.roundEnd == false)
 {
    victoryConditionPlayer();
-   oEnemy.current_state = states.dead;
+    oEnemy.current_state = states.dead;
 }
 // timer controller
 if (global.seconds &lt;= 0)

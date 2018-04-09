@@ -1,47 +1,58 @@
 xScale = approach(xScale,1,0.03);
 yScale = approach(yScale,1,0.03);
 
+
 //animation control    
-switch currentState {
-    case states.normal:
-        if(left){
+switch str_current_state 
+{
+    case "idle":
+        if(left)
+        {
             facing = -1;
-        }else if(right){
+        }
+        else if(right)
+        {
             facing = 1;
         }
         
-        if(onGround){
-            if(left || right){
-                sprite = sprPlayer_Run;
-            }else{
-                sprite = sprPlayer_Idle;
+        if(onGround)
+        {
+            if(left || right)
+            {
+                sprite = spr_walking;
             }
-        }/*else{
-            sprite = sprPlayer_Jump;
-            if(ySpeed < -1){
-                frame = 0;
-            }else if(ySpeed > 1){
-                frame = 1;
-            }else{
-                frame = 2;
+            else
+            {
+                sprite = spr_idle;
             }
-        }*/
+     
+        }
     break;
 
-    case states.crouch:
-        sprite = sprPlayer_Crouch;
+    case "crouch":
+        sprite = spr_crouch;
     break;
 
-    case states.attack:
-        sprite = sprPlayer_Attack;
+    case "hardPunch":
+          sprite = spr_stand_strong_punch;
     break;
-    
-    case states.dead:
-        sprite = sprPlayer_Dead;
+    case "softPunch":
+          sprite = spr_jab;
     break;
-    
-    case states.air:
-        sprite = sprPlayer_Jump;
+     case "normalPunch":
+          sprite = spr_fast_punch;
+     break;
+      case "softKick":
+          sprite = spr_soft_kick;
+     break;
+      case "hardKick":
+          sprite = spr_hard_kick;
+     break;
+     case "dead":
+          sprite = spr_dead;
+     break;
+      case "air":
+         sprite = spr_jump;
            if(ySpeed < -1){
                 frame = 0;
            }else if(ySpeed > 1){
@@ -50,10 +61,18 @@ switch currentState {
                 frame = 2;
            }
     break;
+    // combos
+    case "combo1":
+        sprite = spr_stand_strong_punch_reverse;
+    break;
+    case "combo2":
+        sprite = spr_double_kick;
+    break;
 }
 
 //reset frame to 0 if sprite changes
-if(lastSprite != sprite){
+if(lastSprite != sprite)
+{
     lastSprite = sprite;
     frame = 0;
 }

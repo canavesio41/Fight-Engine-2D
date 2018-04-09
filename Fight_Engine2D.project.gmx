@@ -12,7 +12,17 @@
       <sprite>sprites\sprPlayer_Crouch</sprite>
       <sprite>sprites\sprPlayer_Attack</sprite>
       <sprite>sprites\sprPlayer_Jump</sprite>
-      <sprite>sprites\sprPlayer_Dead</sprite>
+      <sprite>sprites\spr_jab</sprite>
+      <sprite>sprites\spr_fast_punch</sprite>
+      <sprite>sprites\spr_idle</sprite>
+      <sprite>sprites\spr_stand_strong_punch</sprite>
+      <sprite>sprites\spr_stand_strong_punch_reverse</sprite>
+      <sprite>sprites\spr_hard_kick</sprite>
+      <sprite>sprites\spr_soft_kick</sprite>
+      <sprite>sprites\spr_double_kick</sprite>
+      <sprite>sprites\spr_crouch</sprite>
+      <sprite>sprites\spr_walking</sprite>
+      <sprite>sprites\spr_jump</sprite>
     </sprites>
     <sprites name="collision">
       <sprite>sprites\sprBlocker</sprite>
@@ -20,7 +30,8 @@
     <sprites name="enemy">
       <sprite>sprites\sprEnemy_Idle</sprite>
       <sprite>sprites\sprEnemy_Hurt</sprite>
-      <sprite>sprites\sprEnemy_Dead</sprite>
+      <sprite>sprites\spr_hurt</sprite>
+      <sprite>sprites\spr_dead</sprite>
     </sprites>
     <sprites name="boxes">
       <sprite>sprites\sprHurtbox</sprite>
@@ -40,12 +51,18 @@
       <script>scripts\animation_control.gml</script>
       <script>scripts\animation_control_enemy.gml</script>
       <scripts name="states">
+        <script>scripts\hit_state.gml</script>
         <script>scripts\normal_state.gml</script>
         <script>scripts\crouch_state.gml</script>
-        <script>scripts\attack_state.gml</script>
-        <script>scripts\hit_state.gml</script>
-        <script>scripts\dead_state.gml</script>
+        <script>scripts\hard_medium_punch_state.gml</script>
+        <script>scripts\normal_medium_punch_state.gml</script>
+        <script>scripts\soft_medium_punch_state.gml</script>
+        <script>scripts\soft_medium_kick.gml</script>
+        <script>scripts\hard_medium_kick.gml</script>
         <script>scripts\air_state.gml</script>
+        <script>scripts\dead_state.gml</script>
+        <script>scripts\combo1.gml</script>
+        <script>scripts\combo2.gml</script>
       </scripts>
     </scripts>
     <scripts name="math">
@@ -67,13 +84,13 @@
       <script>scripts\hurtbox_create.gml</script>
       <script>scripts\hitbox_create.gml</script>
     </scripts>
-    <script>scripts\draw_spritebar.gml</script>
     <scripts name="RoundSystem">
       <script>scripts\victoryConditionPlayer.gml</script>
       <script>scripts\victoryConditionEnemy.gml</script>
       <script>scripts\drawCondition.gml</script>
       <script>scripts\RestartLifeAndDeath.gml</script>
     </scripts>
+    <script>scripts\draw_spritebar.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\game_control</object>

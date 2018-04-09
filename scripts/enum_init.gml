@@ -4,7 +4,7 @@ enum states {
     crouch, 
     attack,
     hit,
-    dead,
-    air
+    jab,
+    dead
 }
 

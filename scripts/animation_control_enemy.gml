@@ -4,16 +4,11 @@ yScale = approach(yScale,1,0.03);
 //animation control    
 switch currentState {
     case states.normal:
-        sprite = sprEnemy_Idle;
+        sprite = spr_idle;
     break;
 
     case states.hit:
-        sprite = sprEnemy_Hurt;
-    break;
-    
-    case states.dead:
-        sprite = sprEnemy_Dead;
-        show_debug_message("laputaquetepario");
+        sprite = spr_hurt;
     break;
 }
 

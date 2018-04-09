@@ -1,4 +1,4 @@
 if (cur_hp > 0)
 {
-    currentState = states.normal;
+    str_current_state = "idle";
 }
