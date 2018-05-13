@@ -38,6 +38,16 @@ global.roundNumber = 1;
 global.playerPoints = 0;
 global.enemyPoints = 0;
 global.maxVictoryPoints = 2;
+// Combo counter system
+global.comboCounter = 0;
+global.totalComboTimer = 50; // Constante para rellenar el timer (Hollow)
+global.comboCounterTimer = global.totalComboTimer;
+/*Algo que debo aclarar: Esto sera eficiente para el jugador, 
+pero cuando el enemigo empiece a golpear, haganle un contador al enemigo.
+Basicamente, copien los objetos y el codigo del ComboCounterTimer y hagan una version
+para el enemigo.
+
+Hollow.*/
 </string>
           </argument>
         </arguments>
@@ -79,6 +89,11 @@ if(oEnemy.cur_hp &lt;= 0 &amp;&amp; global.roundEnd == false)
 {
    victoryConditionPlayer();
     oEnemy.current_state = states.dead;
+}
+// combo counter and combo counter timer controller
+if (global.roundEnd == false)
+{
+    ComboCounterTimer();
 }
 // timer controller
 if (global.seconds &lt;= 0)

@@ -108,7 +108,6 @@ ds_list_destroy(ignoreList);
             <kind>1</kind>
             <string>life --;
 
-
 </string>
           </argument>
         </arguments>

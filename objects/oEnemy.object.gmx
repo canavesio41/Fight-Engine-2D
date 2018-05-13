@@ -115,6 +115,9 @@ if(hit)
     cur_hp -= 5;
     hit     = false;
     currentState = states.hit;
+    // esto aumenta el timer de combos. (Hollow)
+    global.comboCounter++;
+    global.comboCounterTimer = global.totalComboTimer;
 }
 
 if (cur_hp &gt;= 0)
@@ -195,8 +198,6 @@ if(keyboard_check(vk_left) &amp;&amp; place_free(x-2,y) &amp;&amp; place_meeting
 {
     x-=2;
 }
-
-
 </string>
           </argument>
         </arguments>
