@@ -119,7 +119,7 @@ if(hit)
     global.comboCounter++;
     global.comboCounterTimer = global.totalComboTimer;
     // y esto es para el efecto (Hollow)
-    global.hitBackgroundTimer = global.hitBackgroundTime;
+    //global.hitBackgroundTimer = global.hitBackgroundTime;
 }
 
 if (cur_hp &gt;= 0)
