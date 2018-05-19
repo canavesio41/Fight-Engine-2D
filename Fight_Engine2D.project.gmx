@@ -43,6 +43,7 @@
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\hitBackground</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -103,6 +104,7 @@
     <object>objects\obj_bg_bar</object>
     <object>objects\oTimer</object>
     <object>objects\oComboTimerRender</object>
+    <object>objects\HitBackgroundRenderer</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rmTest</room>

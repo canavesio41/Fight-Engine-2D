@@ -118,6 +118,8 @@ if(hit)
     // esto aumenta el timer de combos. (Hollow)
     global.comboCounter++;
     global.comboCounterTimer = global.totalComboTimer;
+    // y esto es para el efecto (Hollow)
+    global.hitBackgroundTimer = global.hitBackgroundTime;
 }
 
 if (cur_hp &gt;= 0)
@@ -288,7 +290,6 @@ switch currentState {
             <kind>1</kind>
             <string>//draw sprite
 draw_sprite_ext( sprite, frame, xPos, yPos, xScale * facing, yScale, angle, color, alpha );
-
 </string>
           </argument>
         </arguments>
